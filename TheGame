@@ -1,0 +1,101 @@
+package firstGame;
+
+import java.util.Scanner;
+
+public class Player {
+
+	static Scanner pName = new Scanner(System.in);
+
+	static Scanner pNum = new Scanner(System.in);
+
+	static boolean p1win = false;
+	static boolean p2win = false;
+	static boolean p3win = false;
+	
+
+	public static void main(String[] args) {
+
+		// Create a random number generator (0-9)
+		int number = (int) (Math.random() * 10);
+
+		System.out.println(number);
+
+		// Get Player1's name
+		System.out.print("Player 1, please enter your name : ");
+		String p1 = pName.nextLine();
+		System.out.println("Welcome " + p1 + "!");
+
+		// Get Player1's chosen number
+		System.out.println("Please enter a number between 0 and 9");
+		int p1Choice = pNum.nextInt();
+		System.out.println("");
+
+		// Get Player2's name
+		System.out.print("Player 2, please enter your name : ");
+		String p2 = pName.nextLine();
+		System.out.println("Welcome " + p2 + "!");
+
+		// Get Player2's chosen number
+		System.out.println("Please enter a number between 0 and 9");
+		int p2Choice = pNum.nextInt();
+		System.out.println("");
+
+		// Get Player3's name
+		System.out.print("Player 3, please enter your name : ");
+		String p3 = pName.nextLine();
+		System.out.println("Welcome " + p3 + "!");
+
+		// Get Player3's chosen number
+		System.out.println("Please enter a number between 0 and 9");
+		int p3Choice = pNum.nextInt();
+		System.out.println("");
+
+		// Output generated number
+		System.out.println("The number I was thinking of was : " + number);
+
+		if (number == p1Choice) {
+			p1win = true;
+		}
+		if (number == p2Choice) {
+			p2win = true;
+		}
+		if (number == p3Choice) {
+			p3win = true;
+		}
+
+		// if 1 player wins, output this
+
+		if (p1win == p2win == p3win) {
+			System.out.println("***Everyone wins!***");
+		}
+		else if(p1win == p2win || p1win == p3win || p2win == p3win) {
+			System.out.println("***We have 2 Winners!***");
+		}
+		else if(p1win == p2win || p1win == p3win || p2win == p3win) {
+			System.out.println("***We have 2 Winners!***");
+		}
+
+		// Player1 won or lost?
+		if (number == p1Choice) {
+			System.out.println(p1 + " won!");
+		} else {
+			System.out.println(p1 + ", you lose!");
+		}
+
+		// Player2 won or lost?
+		if (number == p2Choice) {
+			System.out.println(p2 + " won!");
+		} else {
+			System.out.println(p2 + ", you lose!");
+		}
+
+		// Player3 won or lost?
+		if (number == p3Choice) {
+			System.out.println(p3 + " won!");
+		} else {
+			System.out.println(p3 + ", you lose!");
+		}
+
+	}
+
+}
